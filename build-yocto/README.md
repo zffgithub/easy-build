@@ -22,9 +22,7 @@ Optionally, you may use the `--volume=[host-src:]container-dest` option to share
     
     sudo git clone https://github.com/zffgithub/tegra-demo-distro.git -b hardknott_with_ros2
     cd tegra-demo-distro
-    git config --global http.sslverify false
-    git config --global https.sslverify false
-    git submodule update --init
+    sudo git submodule update --init
     sudo rm -rf build/
     . ./setup-env --machine jetson-xavier-nx-devkit --distro tegrademo-mender
     bitbake demo-image-full
