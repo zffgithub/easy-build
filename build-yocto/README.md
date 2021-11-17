@@ -21,6 +21,7 @@ Type the following command to instantiate a clean development environment for th
 Optionally, you may use the `--volume=[host-src:]container-dest` option to share a directory between the host and the container, as in the following example
     
     sudo git clone https://github.com/zffgithub/tegra-demo-distro.git -b hardknott_with_ros2
+    sudo chmod -R 777 tegra-demo-distro/
     cd tegra-demo-distro
     sudo git submodule update --init
     sudo rm -rf build/
