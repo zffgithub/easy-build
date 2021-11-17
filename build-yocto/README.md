@@ -9,19 +9,28 @@ for creating embedded Linux distributions using the [Yocto Project](https://www.
 Building the Docker image
 -------------------------
 
-    $ cd .../easy-build
-    $ docker build -t gmacario/build-yocto build-yocto/
+    $ docker build -t build-yocto:1.0 build-yocto/
 
 Running the Docker image
 ------------------------
 
 Type the following command to instantiate a clean development environment for the Yocto Project:
 
-    $ docker run -ti gmacario/build-yocto
+    $ docker run -ti build-yocto
 
 Optionally, you may use the `--volume=[host-src:]container-dest` option to share a directory between the host and the container, as in the following example
 
-    $ docker run -ti --volume=${PWD}/shared:/home/build/shared gmacario/build-yocto
+    sudo git clone https://github.com/zffgithub/tegra-demo-distro.git -b hardknott_with_ros2
+    cd tegra-demo-distro
+    git config --global http.sslverify false
+    git config --global https.sslverify false
+    git submodule update --init
+    sudo rm -rf build/
+    . ./setup-env --machine jetson-xavier-nx-devkit --distro tegrademo-mender
+    bitbake demo-image-full
+    # bitbake -c cleansstate demo-image-full
+    # bitbake -k demo-image-full
+    # bitbake -s | grep ros2
 
 Please refer to https://docs.docker.com/engine/reference/run/#volume-shared-filesystems for details
 

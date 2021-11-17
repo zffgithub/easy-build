@@ -10,7 +10,7 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
         build-essential chrpath socat cpio python3 python3-pip python3-pexpect python-is-python3 \
         xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
         pylint3 xterm \
-        g++-multilib lsb-release python3-distutils time
+        g++-multilib lsb-release python3-distutils time zstd liblz4-tool gcc-8 g++-8
 # Additional host packages required by poky/scripts/wic
 RUN apt-get install -y curl dosfstools mtools parted syslinux tree zip
 
@@ -33,6 +33,8 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
         echo 'LANG="en_US.UTF-8"'>/etc/default/locale && \
         dpkg-reconfigure --frontend=noninteractive locales && \
         update-locale LANG=en_US.UTF-8
+
+RUN git config --global http.sslverify false && git config --global https.sslverify false
 
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
