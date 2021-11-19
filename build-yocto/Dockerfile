@@ -10,7 +10,9 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
         build-essential chrpath socat cpio python3 python3-pip python3-pexpect python-is-python3 \
         xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
         pylint3 xterm \
-        g++-multilib lsb-release python3-distutils time zstd liblz4-tool gcc-8 g++-8 desktop-file-utils
+        g++-multilib lsb-release python3-distutils time zstd liblz4-tool gcc-8 g++-8 desktop-file-utils bmap-tools \
+        libdrm-dev python3-extras python3-fixtures python3-linecache2 python3-mimeparse python3-pbr \
+        python3-testtools python3-traceback2 python3-unittest2 python-testtools-doc
 # Additional host packages required by poky/scripts/wic
 RUN apt-get install -y curl dosfstools mtools parted syslinux tree zip
 
