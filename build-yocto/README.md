@@ -23,6 +23,7 @@ Optionally, you may use the `--volume=[host-src:]container-dest` option to share
     sudo git clone https://github.com/zffgithub/tegra-demo-distro.git -b hardknott_with_ros2
     sudo chown build:build -R tegra-demo-distro
     cd tegra-demo-distro
+    sudo chmod -R 777 .git
     sudo git submodule update --init
     sudo rm -rf build/
     # not build in root
