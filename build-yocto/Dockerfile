@@ -44,6 +44,7 @@ ENV LANGUAGE en_US.UTF-8
 
 USER build
 WORKDIR /home/build
+COPY start.sh
 CMD "/bin/bash"
 
 # EOF
