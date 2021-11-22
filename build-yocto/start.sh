@@ -2,11 +2,9 @@
 
 set -e
 echo '>>>>>>>>>>>>> Build Start >>>>>>>>>>>>>'
-if [ ! $1 ]; then
-    $1='hardknott_with_ros2'
-fi
-
-sudo git clone https://github.com/zffgithub/tegra-demo-distro.git -b $1
+branch=$1
+echo "选择分支" ${branch:=hardknott_with_ros2}
+sudo git clone https://github.com/zffgithub/tegra-demo-distro.git -b $branch
 sudo chown build:build -R tegra-demo-distro
 cd tegra-demo-distro
 sudo chmod -R 777 .git
