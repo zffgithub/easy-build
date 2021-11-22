@@ -2,6 +2,7 @@
 
 set -e
 echo '>>>>>>>>>>>>> Build Start >>>>>>>>>>>>>'
+cd shared/
 branch=$1
 echo "选择分支" ${branch:=hardknott_with_ros2}
 sudo git clone https://github.com/zffgithub/tegra-demo-distro.git -b $branch
