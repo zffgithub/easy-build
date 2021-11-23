@@ -17,6 +17,8 @@ Running the Docker image
 Type the following command to instantiate a clean development environment for the Yocto Project:
 
     sudo docker run -ti --volume=${PWD}/shared:/home/build/shared build-yocto:1.0
+    or
+    sudo docker run --rm --volume=${PWD}/shared:/home/build/shared build-yocto:1.0 bash -c 'bash -ex start.sh master_with_ros2'
 
 Optionally, you may use the `--volume=[host-src:]container-dest` option to share a directory between the host and the container, as in the following example
     
